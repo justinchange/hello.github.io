@@ -24,13 +24,19 @@ Paragraph 1.6
 ------ 02 Colors
 
 -Primary #e67e22
--Tints: #fdf2e9 #fae5d3
--Shades #cf711f
+-Tints: #fdf2e9 #fae5d3 #eb984e 
+-Shades #cf711f #45260a
 -Accents
--Greys #555 #6f6f6f
+-Greys 
+
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey alloweed on #fdf2e9)
+#555 
+#333
 
 ------ 05 SHADOWS
-
+box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 ------ 06 Border-radius
 
@@ -63,6 +69,13 @@ body {
   color: #555;
 }
 
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22;
+  outline-offset: 6px; */
+  box-shadow: 0 0 0 0.8px rgba(230, 125, 34, 0.5);
+}
+
 /* ******General compents********** */
 
 .container {
@@ -77,6 +90,10 @@ body {
   column-gap: 6.4rem;
 }
 
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
 .grid--2--cols {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -87,6 +104,10 @@ body {
 
 .grid--4--cols {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .grid--center--v {
@@ -129,6 +150,7 @@ body {
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -137,6 +159,9 @@ body {
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
   text-decoration: none;
+
+  border: none;
+  cursor: pointer;
 
   /* Put transition on original state */
   transition: all 0.3s;
@@ -166,6 +191,19 @@ body {
   /* border: 3px solid #fff; */
   /* Trick to add border inside */
   box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover,
+.btn--form:active {
+  background-color: #fff;
+  color: #555;
 }
 
 .link:link,
